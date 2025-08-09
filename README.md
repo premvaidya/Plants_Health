@@ -1,132 +1,157 @@
-PLANT DISEASE RECOGNITION SYSTEM
-A deep learning-powered application to identify and classify plant diseases from leaf images, built with TensorFlow and Streamlit.
+# Plant Disease Recognition System 🌿🔬
 
-🌱 Overview
-This project enables accurate detection of plant diseases using images of leaves. Leveraging a Convolutional Neural Network trained on thousands of annotated leaf images from 38 distinct classes (crops and disease types), it helps farmers and gardeners identify problematic diseases early for improved crop management.
+This project is an end-to-end deep learning solution for automatic plant disease detection using leaf images. Leveraging a custom-trained Convolutional Neural Network (CNN), this system can classify leaves into 38 different categories, ranging from healthy specimens to various crop diseases, with a user-friendly web interface built using Streamlit.
 
-🚩 Features
-38-class classification covering major crops and their common diseases
+## Features
 
-Highly accurate custom CNN, trained to >96% validation accuracy
+- **Detect 38 Classes:** Including specific diseases for Apple, Tomato, Grape, Potato, and more, as well as their healthy states.
+- **Streamlit Interface:** Easily upload leaf images and get instant predictions for plant health and disease.
+- **Deep Learning Backend:** Trained on a dataset of 87,000+ images with a robust CNN architecture.
+- **High Accuracy:** Achieves >96% validation accuracy after 10 epochs.
+- **Model Export:** Pre-trained model and training history are included for quick deployment and reproducibility.
 
-Simple, user-friendly web interface built with Streamlit
+---
 
-Fast inference: Upload an image, get instant predictions and actionable disease names!
+## Table of Contents
 
-🌾 Supported Plant/Disease Classes
-Example classes include:
+- [Demo](#demo)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Model Details](#model-details)
+- [Dataset](#dataset)
+- [Project Structure](#project-structure)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
-Apple (Apple_scab, Black_rot, Cedar_apple_rust, healthy)
+---
 
-Blueberry, Cherry, Corn, Grape, Orange, Peach, Pepper_bell, Potato, Raspberry, Soybean, Squash, Strawberry, Tomato
+## Demo
 
-Disease and healthy states for each
+- Go to the **Disease Recognition** page, upload a plant leaf image (preferably clear and centered).
+- Click **Predict** to get a disease diagnosis and suggested action.
 
-See the full class list in main.py
+---
 
-📊 Dataset
-Based on Kaggle Plant Diseases Dataset:
+## Screenshots
 
-87,000+ RGB images of plant leaves (healthy and diseased)
+### Home Page
 
-38 classes
+> _Friendly UI with project summary and guidance._
 
-Split: 80% training / 20% validation / separate test set
+### Disease Prediction
 
-🛠️ Project Structure
-Train_plant_disease.ipynb
-Jupyter notebook for data loading, augmentation, CNN model building, training, evaluation, and saving the trained model.
+> _Upload an image and get instant results._
 
-Test_Plant_Disease.ipynb
-Notebook for loading the trained model and running predictions on test images.
+---
 
-main.py
-Streamlit app for interactive disease recognition and user dashboard.
+## Installation
 
-trained_model.keras
-Saved TensorFlow model (excluded from repo due to size).
+### 1. Clone this repository
 
-training_hist.json
-Training logs (accuracy/loss over epochs).
-
-🚀 Getting Started
-Prerequisites
-Python 3.8+
-
-TensorFlow 2.x
-
-Streamlit
-
-Numpy, Pandas, Matplotlib, Seaborn
-
-Install dependencies:
-
-bash
-pip install tensorflow streamlit numpy pandas matplotlib seaborn
-1. Model Training (optional)
-If you wish to retrain:
+git clone <repository-url>
+cd Plants_Health
 
 text
-python
-# In Jupyter/Colab:
-open Train_plant_disease.ipynb
-# Point `train/` and `valid/` directories to your image dataset
 
-# (Training takes several hours on CPU!)
-A trained model trained_model.keras is required to run the inference app.
+### 2. Install Requirements
 
-2. Run the Streamlit App
-Place main.py, trained_model.keras, and home_page.jpeg in the same directory.
+Python 3.8+ is recommended.
 
-bash
+pip install -r requirements.txt
+
+text
+
+Typical requirements:
+
+streamlit
+tensorflow
+numpy
+pandas
+matplotlib
+opencv-python
+
+text
+
+### 3. Download Model
+
+Ensure that `trained_model.keras` is present in your working directory.  
+If not, you’ll need to train the model (`Train_plant_disease.ipynb`) or download it if provided.
+
+---
+
+## Usage
+
+### Run the Streamlit App
+
 streamlit run main.py
-This will launch the interactive web dashboard in your default browser.
 
-3. Using the App
-Navigate to "Disease Recognition"
+text
 
-Upload a photo of a diseased or healthy leaf (JPEG/PNG)
+- Open the browser link Streamlit provides.
+- Use the sidebar to navigate between **Home**, **About**, and **Disease Recognition**.
 
-Hit "Predict"
+---
 
-See instant prediction and disease name!
+## Model Details
 
-🏗️ Model Architecture
-Multiple Conv2D and MaxPool2D blocks (32→512 filters)
+- **Input:** Color leaf images, resized to 128x128 pixels.
+- **Architecture:** 10-layer CNN with increasing filter depth and dropout for regularization.  
+  - Conv2D layers (32 → 64 → 128 → 256 → 512 filters)
+  - Dense layer with 1500 neurons before classification
+  - Dropout: 25% (after conv), 40% (after dense)
+  - Output: 38 neurons (softmax) for multiclass classification
+- **Optimizer:** Adam (`lr=0.0001`)
+- **Loss:** Categorical Crossentropy
+- **Performance:**  
+  - Training accuracy: ~99%  
+  - Validation accuracy: ~96%
 
-Flatten + Dense layers (1500 units)
+---
 
-Output: 38-class softmax
+## Dataset
 
-Dropout layers for regularization
+- Based on the [New Plant Diseases Dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)
+- ~87,000 images of healthy and diseased leaf samples across 38 categories.
+- Split: 80% train, 20% validation, with separate test samples for final inference.
 
-Adam optimizer, categorical_crossentropy loss
+---
 
-10 epochs, learning rate 1e-4
+## Project Structure
 
-Validation accuracy achieved: >96%
+Plants_Health/
+│
+├── main.py # Streamlit web app
+├── Train_plant_disease.ipynb # Model training notebook (with model definition)
+├── Test_Plant_Disease.ipynb # Model testing/validation notebook
+├── trained_model.keras # Saved trained model
+├── training_hist.json # Model training history
+├── home_page.jpg # UI image for the homepage
+├── requirements.txt # Python dependencies
+└── [data/ ...] # (Optional) Folder for train/valid/test images
 
-📈 Results
-Training accuracy: up to 98.9%
+text
 
-Validation accuracy: up to 96.4%
+---
 
-Rapid inference suitable for real-time usage
+## Acknowledgements
 
-📃 Citation
-Dataset:
-Vipooool, "New Plant Diseases Dataset", Kaggle, https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
+- Inspired by open-source plant disease datasets and similar deep learning agricultural projects.
+- Dataset by Vipooool ([Kaggle](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)).
+- Built using TensorFlow, Streamlit, and open Python libraries.
 
-🤝 Acknowledgements
-Kaggle PlantVillage Dataset
+---
 
-TensorFlow, Keras, Streamlit
+## License
 
-🔒 License
-MIT License (you may define your own)
+*Specify your license here (e.g., MIT, Apache, GPL, etc.)*
 
-💡 Contact & Contributing
-Pull requests and suggestions welcome!
-Created by [Saransh Vaidya]
-For questions and contributions, open an Issue or Pull Request on the repository.
+---
 
+## Contact
+
+For issues or contributions, please submit a pull request or open an issue in the repository.
+
+---
+
+**Keep our crops healthy and our planet green!**
