@@ -52,7 +52,6 @@ This project is an end-to-end deep learning solution for automatic plant disease
 git clone <repository-url>
 cd Plants_Health
 
-text
 
 ### 2. Install Requirements
 
@@ -60,7 +59,6 @@ Python 3.8+ is recommended.
 
 pip install -r requirements.txt
 
-text
 
 Typical requirements:
 
@@ -71,7 +69,6 @@ pandas
 matplotlib
 opencv-python
 
-text
 
 ### 3. Download Model
 
@@ -130,9 +127,7 @@ Plants_Health/
 ├── requirements.txt # Python dependencies
 └── [data/ ...] # (Optional) Folder for train/valid/test images
 
-text
 
----
 
 ## Acknowledgements
 
