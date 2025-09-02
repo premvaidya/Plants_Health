@@ -1,4 +1,4 @@
-readme_content = """# Plant Disease Recognition System 🌿🔬
+# Plant Disease Recognition System 🌿🔬
 
 An end-to-end deep learning project for automatic plant disease detection using leaf images.  
 Built with a custom Convolutional Neural Network (CNN) and a Streamlit web interface.
@@ -18,12 +18,10 @@ Built with a custom Convolutional Neural Network (CNN) and a Streamlit web inter
 git clone https://github.com/premvaidya/Plants_Health.git
 cd Plants_Health
 
-text
 
 ### 2. Install dependencies
 pip install -r requirements.txt
 
-text
 Common requirements:
 streamlit
 tensorflow
@@ -32,7 +30,6 @@ pandas
 matplotlib
 opencv-python
 
-text
 
 ### 3. Model file
 Ensure `trained_model.keras` is in your directory, or train using `Train_plant_disease.ipynb`.
@@ -43,7 +40,6 @@ Ensure `trained_model.keras` is in your directory, or train using `Train_plant_d
 
 streamlit run main.py
 
-text
 - Open the provided link in your browser.
 - Use the sidebar to navigate pages.
 
