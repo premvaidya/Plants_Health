@@ -1,7 +1,7 @@
 # Plant Disease Recognition System 🌿🔬
 
 <br>
-![Project Intro](assets/intro.gif)
+![Project Intro](Plant_Disease_Prediction_Project/gitprojedct-MadewithClipchamp-ezgif.gif)
 
 <br>
 An end-to-end deep learning project for automatic plant disease detection using leaf images.  
