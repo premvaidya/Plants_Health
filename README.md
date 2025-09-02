@@ -68,7 +68,7 @@ text
 
 ## Project Structure
 
-Plants_Health/
+Plants_Health/  <br>
 ├── main.py <br>
 ├── Train_plant_disease.ipynb <br>
 ├── Test_Plant_Disease.ipynb <br>
