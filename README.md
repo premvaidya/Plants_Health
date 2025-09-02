@@ -62,6 +62,7 @@ streamlit run main.py
 
 ---
 
+
 ## Project Structure
 
 Plants_Health/  <br>
