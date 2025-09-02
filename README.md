@@ -1,5 +1,5 @@
 # Plant Disease Recognition System 🌿🔬
-
+[![Watch the video](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 An end-to-end deep learning project for automatic plant disease detection using leaf images.  
 Built with a custom Convolutional Neural Network (CNN) and a Streamlit web interface.
 
