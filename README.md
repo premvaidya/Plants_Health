@@ -69,14 +69,14 @@ text
 ## Project Structure
 
 Plants_Health/
-├── main.py
-├── Train_plant_disease.ipynb
-├── Test_Plant_Disease.ipynb
-├── trained_model.keras
-├── training_hist.json
-├── home_page.jpg
-├── requirements.txt
-└── [data/ ...]
+├── main.py <br>
+├── Train_plant_disease.ipynb <br>
+├── Test_Plant_Disease.ipynb <br>
+├── trained_model.keras <br>
+├── training_hist.json <br>
+├── home_page.jpg <br>
+├── requirements.txt <br>
+└── [data/ ...] <br>
 
 ---
 
