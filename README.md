@@ -16,7 +16,15 @@ Built with a custom Convolutional Neural Network (CNN) and a Streamlit web inter
 
 ---
 
+
+## 📦 Project Code & Large Files
+
+All code and large files are available in this Google Drive folder:<br>
+[Click here to access the shared project files](https://drive.google.com/drive/folders/1FWhehho_y5P4HTrMOunl2deRl-xoy-E2?usp=sharing)
+
+
 ## Installation
+
 
 ### 1. Clone the repository
 git clone https://github.com/premvaidya/Plants_Health.git
