@@ -100,13 +100,4 @@ Plants_Health/  <br>
 **Keep our crops healthy and our planet green!**
 """
 
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write(readme_content)
-
-print("✅ README.md file created successfully!")
-Save that script as make_readme.py and run:
-
-bash
-python make_readme.py
-You’ll now have a ready-to-use README.md in your current folder.
 
