@@ -1,6 +1,6 @@
 # Plant Disease Recognition System 🌿🔬
 
-![Project gif](Plant_disease_Prediciton_Project/gitprojedct-MadewithClipchamp-ezgif.gif)
+![Project gif](https://s14.gifyu.com/images/bTk4F.gif)
 
 
 <br>
